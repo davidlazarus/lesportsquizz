@@ -1,0 +1,154 @@
+/* dimensions for Macbook Pro 2580px x 1800px */
+
+/* Header section with logos */
+
+header {
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+	background-color: #616161;
+	color: white;
+
+}
+
+img.logo {
+
+	height: 50px;
+	float: left;
+	margin-top: -40px;
+
+}
+
+img.headerWordmark {
+
+	height: 30px;
+    margin: 0 auto -6px auto;
+    padding: 5px 0 5px 0;
+    display: inherit;
+}
+
+/* White section with video style*/
+
+section.videoSection {
+
+	background-color: white;
+	height: 350px;
+
+
+
+}
+
+div.player {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0 10px 0;
+}
+
+iframe.video {
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+
+}
+
+/* Button style*/
+
+button.init {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	padding: 6px 0;
+ 	font-size: 40px;
+	line-height: 1.428571429;
+ 	border-radius: 200px;
+ 	font-family: arial;
+  	color: #40C4FF;
+ 	background-color: white;
+  	float: right;
+  	margin: 80px 200px 80px 0;
+  	box-shadow: 0px 2px 8px black;
+  	font-weight: bold;
+
+}
+
+/* Question Strip style*/
+
+section.question {
+
+	height: 60px;
+	background-color: #BDBDBD;
+	overflow: hidden;
+
+}
+
+section.question p {
+
+	font-family: arial;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+
+}
+
+/* Answer Box style*/
+
+section.answer {
+	
+	height: 275px;
+	background-color: #E0E0E0
+}
+
+div.answerBox1, div.answerBox2 {
+	
+	display: flex;
+	justify-content: space-around;
+	color: white;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 75px 120px 0 400px;
+
+}
+
+/* Alignement of tick-boxes*/
+
+div.answerOne, div.answerTwo, div.answerThree, div.answerFour {
+
+	/*display: inline-flex;*/
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+/* Footer strip with progress dots */
+
+section.questionProgress {
+
+	height: 30px;
+	background-color: #BDBDBD;
+	text-align: center;
+
+}
+
+section.questionProgress i {
+	
+	font-size:10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+#one {
+
+	color: #40C4FF;
+}
+
+/* Body Style */
+
+body {
+
+	height: 100%;
+	background-color: #616161;
+	overflow: hidden;	
+}
