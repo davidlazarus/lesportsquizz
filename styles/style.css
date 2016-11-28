@@ -1,8 +1,10 @@
+
+
 /* dimensions for Macbook Pro 2580px x 1800px */
 
 /* Header section with logos */
 
-header {
+/*header {
 	width: 100%;
 	padding: 10px 0px 10px 0px;
 	background-color: #616161;
@@ -28,7 +30,7 @@ img.headerWordmark {
 
 /* White section with video style*/
 
-section.videoSection {
+/* section.videoSection {
 
 	background-color: white;
 	height: 350px;
@@ -53,7 +55,7 @@ iframe.video {
 
 /* Button style*/
 
-button.init {
+/* button.init {
 	width: 80px;
 	height: 80px;
 	text-align: center;
@@ -73,7 +75,7 @@ button.init {
 
 /* Question Strip style*/
 
-section.question {
+/* section.question {
 
 	height: 60px;
 	background-color: #BDBDBD;
@@ -93,7 +95,7 @@ section.question p {
 
 /* Answer Box style*/
 
-section.answer {
+/* section.answer {
 	
 	height: 275px;
 	background-color: #E0E0E0
@@ -113,17 +115,17 @@ div.answerBox1 {
 
 /* Alignement of tick-boxes*/
 
-div.answerOne, div.answerTwo, div.answerThree, div.answerFour {
+/* div.answerOne, div.answerTwo, div.answerThree, div.answerFour {
 
 	/*display: inline-flex;*/
-	text-align: center;
+	/*text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 
 }
 /* Footer strip with progress dots */
 
-section.questionProgress {
+/* section.questionProgress {
 
 	height: 30px;
 	background-color: #BDBDBD;
@@ -146,7 +148,7 @@ section.questionProgress i {
 
 /* Body Style */
 
-body {
+/* body {
 
 	height: 100%;
 	background-color: #616161;
