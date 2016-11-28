@@ -1,6 +1,7 @@
 /* List and create your functions and shit here */
 
 
+
 // muting the video inputs from youtube
 
 var tag = document.createElement('script');
@@ -19,6 +20,8 @@ function onYouTubeIframeAPIReady() {
      });
 }
 
+ 
+
 function onPlayerReady() {
 	player.playVideo();
     // Mute!
@@ -27,7 +30,7 @@ function onPlayerReady() {
 
 // making the checkboxes mututally exclusive 
 
-$('section div div .checkbox').click(function () { 
+$('div.answerBox').click(function () { 
 	checkedState = $(this).attr('checked');
     $(this).parent('div').children('.checkbox:checked').each(function () {
     	$(this).attr('checked', false);
@@ -35,6 +38,9 @@ $('section div div .checkbox').click(function () {
 
     $(this).attr('checked', checkedState);
 });
+
+
+
 
 // the question part 
 

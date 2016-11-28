@@ -99,7 +99,7 @@ section.answer {
 	background-color: #E0E0E0
 }
 
-div.answerBox1, div.answerBox2 {
+div.answerBox1 {
 	
 	display: flex;
 	justify-content: space-around;
