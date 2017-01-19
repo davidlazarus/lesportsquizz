@@ -1,8 +1,6 @@
 /* List and create your functions and shit here */
 
 
-/* load the deck*/
-
 var deck = [
 	{
 		question: "in what year did michael jordan definitively retire from the NBA?",
@@ -31,85 +29,101 @@ var deck = [
 ];
 
 
-
-/* start game */
-
 function randomIntFromInterval(min,max)
 {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-var n = randomIntFromInterval(0,4);
 
-console.log("this is N = " + n);
 
-function loadGame() {
-	$('.question > p').append(deck[n].question);
-	$('.answerOne').append(deck[n].answers[0]);
-	$('.answerTwo').append(deck[n].answers[1]);
-	$('.answerThree').append(deck[n].answers[2]);
-	$('.answerFour').append(deck[n].answers[3]);
+function loadGame(num) {
+	$('.question').append(deck[num].question);
+	$('.answerOne').append(deck[num].answers[0]);
+	$('.answerTwo').append(deck[num].answers[1]);
+	$('.answerThree').append(deck[num].answers[2]);
+	$('.answerFour').append(deck[num].answers[3]);
 };
 
-/*$('input.checkbox').on('change', function() {
-    $('input.checkbox').not(this).prop('checked', false);  
-});*/
+function clearGame() {
+	$('.question').html('');
+	$('.answerOne').html('<input name="answer" type="radio" class="checkbox">');
+	$('.answerTwo').html('<input name="answer" type="radio" class="checkbox">');
+	$('.answerThree').html('<input name="answer" type="radio" class="checkbox">');
+	$('.answerFour').html('<input name="answer" type="radio" class="checkbox">');
+};
 
-var guess; 
 
-/*YOU NEED TO DEFINE THAT THE CHECKBOX YOU WANT IS THE ONE THAT IS CHECKED TRUE!!*/
+var score = 0;
+var cardCount = 4;
 
+// The issue is that innerText and html are different by the " " marks. RESEARCH. 
 
+$('.init').click(function()
+{
+	cardCount--;
+	
+	var currentQuestion = document.getElementsByClassName("question")[0].innerText;
+	console.log(currentQuestion);
+	var n = findN(currentQuestion);
+	console.log(n);
 
-$('init').click(function(){
+	var checkedValue = $('.checkbox:checked').parent().text();
+	console.log(checkedValue);
+	console.log(deck[n-1].correctanswer);
+	var theIs = document.getElementsByClassName('fa-circle');
+	
+	console.log(n);
+	/*this isn't working -- i don't know why*/
+	if (checkedValue === deck[n].correctanswer){
+		console.log('checked value is' + checkedValue + 'correctanswer is' + correctanswer);
+		alert('correct motherfucking answer bitch sauce!');
+		theIs[score].className += " green";
 
-	$('input.checkbox').value = guess;
+	} else {
+		console.log(theIs);
+		theIs[score].className += " red";
+	}
+	
+	score ++;
+
+	clearGame()
+
+	var genNum = randomIntFromInterval(0, cardCount); /* add where genNum cannot be equal to current n*/
+	console.log(genNum);
+	
+	loadGame(genNum);
+
 });
 
 
-var checkedValue = $(".checkbox:checked").val();
+function createQuestionDecK()
+{
+	questions = [];
+	for (var i = deck.length - 1; i >= 0; i--) {
+		questions.push( deck[i].question );
+	}
+	return questions;
+};
 
-/* var checkedValue = document.querySelector('.checkbox').value; */
+var questionDeck = createQuestionDecK();
+console.log(questionDeck);
 
-console.log(checkedValue);
-
-
-console.log(guess);
-
-
-
-
-/* check the answer
-
-
-MAKE AN IF ELSE STATEMENT WHETHER checkbox is checked or not ********
-when button clicked, value of checked box = guess
-
-$('init').click(checkbox.checked = guess);
-
-
-function isRightAnswer(){
-
-	if { clicked == correctAnswer.n;
-	then display correct
-	else display wrong;
-};*/	
-
-/* load next card 
-
-var n = random value that isnt equal to before; 
-
-function(loadGame);
-
-deck[0].question
-deck[0].answers */
+function findN(question)
+{
+	return questionDeck.indexOf(question);
+};
 
 
 
 $(document).ready(function(){
 	
 /* List the functions ready to go here*/
-	loadGame();
+	
+	var n = randomIntFromInterval(0,4);
+	loadGame( n );
 
 });
+
+/*The randomization isn't working correctly. Because if set ONE is loaded, 
+it will still pool from questions 0, 1 and 2. (3-1 =2)*/
 
