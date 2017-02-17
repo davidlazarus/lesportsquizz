@@ -6,62 +6,86 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Stylesheets -->
-		<link rel="stylesheet" href="styles/reset.css">
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="dist/css/bootstrap-material-design.css">
-  		<link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css"> 
-		<link rel="stylesheet" href="styles/style.css"> 
 		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  		
+  		<!--Import materialize.css-->
+     	<link type="text/css" rel="stylesheet" href="dist/css/materialize.min.css"  media="screen,projection"/>
+		
+  		<!-- My Styles -->
+		<link rel="stylesheet" href="styles/style.css"> 
 	</head>
-	<body>
-
-		<div class="container-fluid">
+	<body class="pink lighten-5">
 		
-		<header> 
+		<div class="container">
 
-      	<!-- <img class="headerWordmark" src="links/lsq_logo_wordmark.png"></img>
-     	<img class="logo" src="links/lsq_logo_symbol.png"></img> -->
+			<header class="row"> 
 
-		</header>
-    
-   		
+				<div class="span valign-wrapper">
+	     	 	<img src="links/lsq_logo_wordmark.png" class="valign responsive-img mainTitle"></img>
+				</div>
 
-		<section class="videoSection">
+			</header>
 
-			<div class="player">
-			<!-- <iframe id="ytplayer" class="video" width="560" height="315" type="text/html" src="https://www.youtube.com/embed/n_-wBY2gH4A?start=46&end=134&autoplay=1&loop=1&controls=0&showinfo=0&enablejsapi=1&rel=0&playlist=n_-wBY2gH4A*FUCK*" frameborder="0"></iframe> -->
-			</div>
+		<div class="card-panel z-depth-3 hoverable">
+			<h5 class="question col m4 center-align">
+			</h5>
 
-		</section>
+			<section class="answer col m12 offset-m3"> 
 
-		<section class="question">
-		</section>
-
-		<button class="init"><i class="fa fa-check" aria-hidden="true"></i> </button>
-
-		<section class="answer"> 
-
-			<form class="answerBox"> 
-				<div class="answerOne"><input name="answer" type="radio" class="checkbox"></div>
-				<div class="answerTwo"><input name="answer" type="radio" class="checkbox"></div>
-				<div class="answerThree"><input name="answer" type="radio" class="checkbox"></div>
-				<div class="answerFour"><input name="answer" type="radio" class="checkbox"></div>
-			</form>
-		
-		</section>
-
-		<section class="questionProgress">
-			<i class="fa fa-circle" aria-hidden="true" id="one"></i>
-			<i class="fa fa-circle" aria-hidden="true" id="two"></i>
-			<i class="fa fa-circle" aria-hidden="true" id="three"></i>
-			<i class="fa fa-circle" aria-hidden="true" id="four"></i>
-			<i class="fa fa-circle" aria-hidden="true" id="five"></i>
-		</section>
+				<form class="answerBox"> 
+					<h5 class="answerOne center-align"><input class="checkbox" name="answer" type="radio" id="id1" ><label style="vertical-align: middle" for="id1"></label></h5>
+					<h5 class="answerTwo center-align"><input class="checkbox" name="answer" type="radio" id="id2" ><label style="vertical-align: middle" for="id2"></label></h5>
+					<h5 class="answerThree center-align"><input class="checkbox" name="answer" type="radio" id="id3" ><label style="vertical-align: middle" for="id3"></label></h5>
+					<h5 class="answerFour center-align"><input class="checkbox" name="answer" type="radio" id="id4" /><label style="vertical-align: middle" for="id4"></label></h5>
+				</form>
+			
+			</section>
 
 		</div>
+		</div>
+				
+			<div class="col m4 offset-m4 center-align buttonConfirm">
+				<a class="init waves-effect waves-light btn hoverable"><i class="fa fa-check" aria-hidden="true"></i> </a>
+			</div>
+			
+	
+			<section class="questionProgress col m6 offset-m3 center-align">
+				<i class="fa fa-circle" aria-hidden="true" id="one"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="two"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="three"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="four"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="five"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="six"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="seven"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="eight"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="nine"></i>
+				<i class="fa fa-circle" aria-hidden="true" id="ten"></i>
+			</section>
+			
+
+
+		</div>
+
+			<div class="row">
+        		<div class="col m12">
+         			<div class="reveal card blue darken-1">
+        				<div class="card-content white-text">
+            				<span class="card-title confirm"><h1 class="center-align score">SCORE = </h1> 
+            					<div class="center-align restart"><a class="waves-effect waves-light btn hoverable white blue-text restart">RESTART</a> 
+            					</div>
+            				</span>
+            			</div>
+          			</div>
+        		</div>
+      		</div>
+		
+
+
+		<!--Import jQuery before materialize.js-->
 				
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript" src="dist/js/material.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="dist/js/materialize.min.js"></script>
+		<!-- <script type="text/javascript" src="js/app.js"></script> -->
+		<script type="text/javascript" src="js/api.js"></script>
 	</body>
 </html>
