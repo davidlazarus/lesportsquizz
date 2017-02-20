@@ -4,14 +4,15 @@ var tries = 0;
 var points = 0;
 var api = "https://opentdb.com/api.php?amount=" + numberQ + "&category=21&type=multiple";
 
-// function initiateQuiz(){
-$.get( api, function( data ) {
- 	deck = data.results; 
-	var n = deck.length - 1 ;
-	loadGame(n);
-	clickListener(deck, n);
-});
-// };
+function initiateQuiz(){
+	$.get( api, function( data ) {
+	 	deck = data.results; 
+	 	console.log(deck);
+		var n = deck.length - 1 ;
+		loadGame(n);
+		clickListener(deck, n);
+	});
+};
 
 function clickListener(deck_a, n_a) {
 
@@ -20,8 +21,8 @@ function clickListener(deck_a, n_a) {
 		var currentQuestion = deck_a[n_a].question;
 		var indexB = findN(currentQuestion);
 		var theIs = document.getElementsByClassName('fa-circle');
+		console.log(theIs);
 		checkValues(checkedValue, deck_a, indexB, theIs);
-		arrangeQ(n_a, deck_a);
 		deck.splice(indexB, 1);
 		clearGame();
 		n_a --;
@@ -35,16 +36,19 @@ function checkValues(checkedValue_a, deck_a, indexB_a, theIs_a){
 	numberQ--;
 
 	if (checkedValue_a == deck_a[indexB_a].correct_answer){
-		alert('correct answer bitch sauce!');
-		theIs_a[tries].className += " green";
+		Materialize.toast ('correct! nice one!', 4000, 'toast');
+		theIs_a[0].className = "fa fa-check";
 		points ++;
 	} else {
-		theIs_a[tries].className += " red";
+		Materialize.toast('wrong answer...', 4000, 'toast');
+		theIs_a[0].className = "fa fa-times";
 	}
 };
 
 function endLoop(turns, points, n_a, tries){
 	if (turns == 0) {
+		$('.focus').hide();
+		$('.questionProgress').hide();
 		$('.score').append(points);
 		$('.reveal').show();
 
@@ -59,21 +63,18 @@ function randomIntFromInterval(min,max){
 	return Math.floor(Math.random()*(max-min+1) + min);
 };
 
-function arrangeQ(n, deck){
-console.log(n);
-var randomIndex = randomIntFromInterval(0, deck.length);
-arr = deck[n].incorrect_answers;
-arr.splice(randomIndex, 0, deck[n].correct_answer);
-console.log(arr);
-};
-
 
 function loadGame(num) {
+
+	var randomIndex = randomIntFromInterval(0, 3);
+	arr = deck[num].incorrect_answers;
+	arr.splice(randomIndex, 0, deck[num].correct_answer);
+	
 	$('.question').append(deck[num].question);
-	$('.answerOne').append(deck[num].correct_answer);
-	$('.answerTwo').append(deck[num].incorrect_answers[0]);
-	$('.answerThree').append(deck[num].incorrect_answers[1]);
-	$('.answerFour').append(deck[num].incorrect_answers[2]);
+	$('.answerOne').append(arr[0]);
+	$('.answerTwo').append(arr[1]);
+	$('.answerThree').append(arr[2]);
+	$('.answerFour').append(arr[3]);
 };
 
 function clearGame() {
@@ -86,9 +87,9 @@ function clearGame() {
 
 function reset() {
 	$('.restart').click(function(){
-		$('.reveal').hide();
-		// initiateQuiz();
-		//  HERE YOU HAVE TO RELOAD THE PAGE OR RELOAD THE GAME FUNCTION
+		$('.reveal')
+		// initiateQuiz(); this is bugging, and I don't understand why!
+		window.location.reload();
 	});
 };
 
@@ -107,10 +108,10 @@ function findN(question){
 
 
 
-// $(document).ready(function(){
+$(document).ready(function(){
 
-// 	initiateQuiz();
+	initiateQuiz();
 
-// });
+});
 
 	

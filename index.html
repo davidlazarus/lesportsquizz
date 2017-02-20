@@ -14,40 +14,43 @@
   		<!-- My Styles -->
 		<link rel="stylesheet" href="styles/style.css"> 
 	</head>
-	<body class="pink lighten-5">
+	
+	<body class="blue">
 		
 		<div class="container">
 
 			<header class="row"> 
-
 				<div class="span valign-wrapper">
-	     	 	<img src="links/lsq_logo_wordmark.png" class="valign responsive-img mainTitle"></img>
+	     	 		<img src="links/lsq_logo_wordmark.png" class="valign responsive-img mainTitle"></img>
 				</div>
-
 			</header>
 
-		<div class="card-panel z-depth-3 hoverable">
-			<h5 class="question col m4 center-align">
-			</h5>
+			<div class="row">	
+				<div class="focus card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 hoverable center-align">
+					<h5 class="question center-align">
+					</h5>
 
-			<section class="answer col m12 offset-m3"> 
+					<section class="answer offset-m4"> 
+						<form class="answerBox"> 
+							<label>
+								<h5 class="answerOne center-align">
+									<input class="checkbox" name="answer" type="radio" id="id1">
+										<label style="vertical-align: middle" for="id1">
+										</label>
+								</h5>
+							</label>
+							
+							<label><h5 class="answerTwo center-align"><input class="checkbox" name="answer" type="radio" id="id2" ><label style="vertical-align: middle" for="id2"></label></h5></label>
+							<label><h5 class="answerThree center-align"><input class="checkbox" name="answer" type="radio" id="id3" ><label style="vertical-align: middle" for="id3"></label></h5></label>
+							<label><h5 class="answerFour center-align"><input class="checkbox" name="answer" type="radio" id="id4" /><label style="vertical-align: middle" for="id4"></label></h5></label>
+						</form>
+					</section>
 
-				<form class="answerBox"> 
-					<h5 class="answerOne center-align"><input class="checkbox" name="answer" type="radio" id="id1" ><label style="vertical-align: middle" for="id1"></label></h5>
-					<h5 class="answerTwo center-align"><input class="checkbox" name="answer" type="radio" id="id2" ><label style="vertical-align: middle" for="id2"></label></h5>
-					<h5 class="answerThree center-align"><input class="checkbox" name="answer" type="radio" id="id3" ><label style="vertical-align: middle" for="id3"></label></h5>
-					<h5 class="answerFour center-align"><input class="checkbox" name="answer" type="radio" id="id4" /><label style="vertical-align: middle" for="id4"></label></h5>
-				</form>
-			
-			</section>
-
-		</div>
-		</div>
-				
-			<div class="col m4 offset-m4 center-align buttonConfirm">
-				<a class="init waves-effect waves-light btn hoverable"><i class="fa fa-check" aria-hidden="true"></i> </a>
-			</div>
-			
+					<div class="col s4 offset-s4 center-align buttonConfirm">
+					<a class="init waves-effect waves-light btn hoverable blue"><i class="fa fa-check" aria-hidden="true"></i> </a>
+					</div>
+				</div>
+			</div>				
 	
 			<section class="questionProgress col m6 offset-m3 center-align">
 				<i class="fa fa-circle" aria-hidden="true" id="one"></i>
@@ -62,27 +65,21 @@
 				<i class="fa fa-circle" aria-hidden="true" id="ten"></i>
 			</section>
 			
-
-
-		</div>
-
 			<div class="row">
-        		<div class="col m12">
-         			<div class="reveal card blue darken-1">
-        				<div class="card-content white-text">
-            				<span class="card-title confirm"><h1 class="center-align score">SCORE = </h1> 
+        		<div class="reveal card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 center-align blue darken-3">
+        				<div class="card-content white-text scoreShow">
+            				<span class="card-title confirm"><h1 class="center-align score">SCORE<br><br></h1> 
             					<div class="center-align restart"><a class="waves-effect waves-light btn hoverable white blue-text restart">RESTART</a> 
             					</div>
             				</span>
             			</div>
-          			</div>
         		</div>
       		</div>
 		
-
+		</div>
 
 		<!--Import jQuery before materialize.js-->
-				
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script type="text/javascript" src="dist/js/materialize.min.js"></script>
 		<!-- <script type="text/javascript" src="js/app.js"></script> -->
