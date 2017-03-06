@@ -12,6 +12,10 @@ i {
 	color: white;
 }
 
+.card {
+  height: 40%;
+
+}
 .mainTitle {
 	padding: 40px 15% 80px 15%;
 }
@@ -26,20 +30,36 @@ i {
   font-weight: bold;
 }
 
-.answerOne, .answerTwo, .answerThree, .answerFour {
+.answer {
   color: black;
 }
 
+.settings, .backGame {
+  color: red;
+  margin-top: 85px;
+  text-align: right;
+  margin-left: 160px;
+  /*position: fixed;*/
+}
 
 .answerBox {
   margin-top: -20px;
 }
 
-.answerBox > label > h5:hover {
+
+.settingsTitle {
+  margin-top: 50px; 
+
+}
+
+.answerBox >  label:hover {
   cursor: hand;
   cursor: pointer;
 }
 
+.back {
+  height: 700px;
+}
 
 .cardstyle {
 	margin-left: 20px;
@@ -82,8 +102,11 @@ i {
   font-weight: bold;
 }
 
+.categoryChoice, .difficultyChoice, .goGame {
+  margin-top: 70px;
+}
 
-
-
-
+ .categoryChoice, .difficultyChoice, .goGame { 
+  margin-bottom: 70px;
+}
 

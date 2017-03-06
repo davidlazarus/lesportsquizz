@@ -13,6 +13,8 @@
 		
   		<!-- My Styles -->
 		<link rel="stylesheet" href="styles/style.css"> 
+		
+
 	</head>
 	
 	<body class="blue">
@@ -24,33 +26,86 @@
 	     	 		<img src="links/lsq_logo_wordmark.png" class="valign responsive-img mainTitle"></img>
 				</div>
 			</header>
+			
+			<div id="card">
+				
+				<div class="front row">
+					<div class="focus card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 hoverable center-align">
 
-			<div class="row">	
-				<div class="focus card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 hoverable center-align">
-					<h5 class="question center-align">
-					</h5>
+						<section class="difficultyChoice offset-m4"> 
+							  <!-- Dropdown Trigger -->
+						  <a class='dropdown-button btn one' href='#' id='buttonOne' data-activates='dropdown1'>Category</a>
 
-					<section class="answer offset-m4"> 
-						<form class="answerBox"> 
-							<label>
-								<h5 class="answerOne center-align">
-									<input class="checkbox" name="answer" type="radio" id="id1">
-										<label style="vertical-align: middle" for="id1">
-										</label>
-								</h5>
-							</label>
-							
-							<label><h5 class="answerTwo center-align"><input class="checkbox" name="answer" type="radio" id="id2" ><label style="vertical-align: middle" for="id2"></label></h5></label>
-							<label><h5 class="answerThree center-align"><input class="checkbox" name="answer" type="radio" id="id3" ><label style="vertical-align: middle" for="id3"></label></h5></label>
-							<label><h5 class="answerFour center-align"><input class="checkbox" name="answer" type="radio" id="id4" /><label style="vertical-align: middle" for="id4"></label></h5></label>
-						</form>
-					</section>
+						  <!-- Dropdown Structure -->
+						  <ul id='dropdown1' class='dropdown-content'>
+						    <li><a value="9">General Stuff</a></li>
+						    <li class="divider"></li>
+						    <li><a value="10">Books</a></li>
+						    <li class="divider"></li>
+						    <li><a value="11">Film</a></li>
+						    <li class="divider"></li>
+						    <li><a value="18">Computerxs</a></li>
+						    <li class="divider"></li>
+						    <li><a value="20">Mythology</a></li>
+						    <li class="divider"></li>
+						    <li><a value="21">Sports</a></li>
+						    <li class="divider"></li>
+						    <li><a value="22">Geography</a></li>
+						    <li class="divider"></li>
+						    <li><a value="23">History</a></li>
+						    <li class="divider"></li>
+						    <li><a value="24">Politics</a></li>
+						    <li class="divider"></li>
+						    <li><a value="26">Celebrities</a></li>
+						  </ul>
 
-					<div class="col s4 offset-s4 center-align buttonConfirm">
-					<a class="init waves-effect waves-light btn hoverable blue"><i class="fa fa-check" aria-hidden="true"></i> </a>
+						</section>
+
+						<section class="categoryChoice offset-m4"> 
+							  <!-- Dropdown Trigger -->
+						  <a class='dropdown-button btn two' href='#' id='buttonTwo' data-activates='dropdown2'>Difficulty</a>
+
+						  <!-- Dropdown Structure -->
+						  <ul id='dropdown2' class='dropdown-content'>
+						    <li><a class="easy">Easy</a></li>
+						    <li class="divider"></li>
+						    <li><a class="medium">Medium</a></li>
+						    <li class="divider"></li>
+						    <li><a class="hard">Difficult</a></li>
+						  </ul>
+
+						</section>
+
+						<!-- <i class="fa fa-arrow-left backGame" aria-hidden="true"></i> -->
+						<a class="waves-effect waves-light btn goGame">GO !</a>
+
 					</div>
+
 				</div>
-			</div>				
+
+
+				<div class="back row">	
+					<div class="focus card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 hoverable center-align">
+						<h5 class="question center-align">
+						</h5>
+
+						<section class="answer offset-m4"> 
+							<form class="answerBox">
+				
+							</form>
+						</section>
+
+						<div class="col s4 offset-s4 center-align buttonConfirm">
+						<a class="init waves-effect waves-light btn hoverable blue"><i class="fa fa-check" aria-hidden="true"></i> </a>
+						</div>
+
+						<!-- <i class="fa fa-cog settings" aria-hidden="true"></i> -->
+
+					</div>
+				</div>	
+
+				
+			</div>			
 	
 			<section class="questionProgress col m6 offset-m3 center-align">
 				<i class="fa fa-circle" aria-hidden="true" id="one"></i>
@@ -65,6 +120,7 @@
 				<i class="fa fa-circle" aria-hidden="true" id="ten"></i>
 			</section>
 			
+
 			<div class="row">
         		<div class="reveal card-panel col l6 m6 s12 offset-l3 offset-m3 z-depth-4 center-align blue darken-3">
         				<div class="card-content white-text scoreShow">
@@ -80,7 +136,9 @@
 
 		<!--Import jQuery before materialize.js-->
 		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
 		<script type="text/javascript" src="dist/js/materialize.min.js"></script>
 		<!-- <script type="text/javascript" src="js/app.js"></script> -->
 		<script type="text/javascript" src="js/api.js"></script>

@@ -2,15 +2,31 @@ var deck;
 var numberQ = 10;
 var tries = 0;
 var points = 0;
-var api = "https://opentdb.com/api.php?amount=" + numberQ + "&category=21&type=multiple";
+var selectCat;
+var selectDiff;
 
-function initiateQuiz(){
+
+function setGoListener(){
+
+	$('.goGame').click(function(){
+
+		var api = "https://opentdb.com/api.php?amount=" + numberQ + "&category=" + selectCat + "&difficulty=" + selectDiff + "&type=multiple";
+		console.log(api);
+		runQuiz(api);	
+
+	});
+};
+
+
+function runQuiz(api){
 	$.get( api, function( data ) {
 	 	deck = data.results; 
 	 	console.log(deck);
+	 	console.log(deck[tries].category);
+	 	console.log(deck[tries].difficulty);
 		var n = deck.length - 1 ;
 		loadGame(n);
-		clickListener(deck, n);
+		clickListener(deck, n);		
 	});
 };
 
@@ -27,7 +43,7 @@ function clickListener(deck_a, n_a) {
 		clearGame();
 		n_a --;
 		tries ++;
-		endLoop(numberQ, points, n_a, tries);	
+		endLoop(numberQ, points, n_a, tries);
 
 	});
 };
@@ -64,25 +80,49 @@ function randomIntFromInterval(min,max){
 };
 
 
-function loadGame(num) {
-
-	var randomIndex = randomIntFromInterval(0, 3);
+function loadGame(num){
 	arr = deck[num].incorrect_answers;
+	arrLength = arr.length + 1; 
+	var randomIndex = randomIntFromInterval(0, arrLength);
 	arr.splice(randomIndex, 0, deck[num].correct_answer);
-	
-	$('.question').append(deck[num].question);
-	$('.answerOne').append(arr[0]);
-	$('.answerTwo').append(arr[1]);
-	$('.answerThree').append(arr[2]);
-	$('.answerFour').append(arr[3]);
+
+	$('.question').append( (deck[num].question) );
+
+	for ( var i = 0; i < arrLength; i++)
+	{		
+		var html = '<label> <h5 class="center-align answer"> <input class="checkbox" type="radio" name="answer" id="id"/>' 
+					+ '<label style="vertical-align: middle" for="id'
+					+ i
+					+ '"/>'
+					+ '</label>'
+					+ arr[i]
+					+ '</h5></label>';
+
+		$('.answerBox').append(html);
+	};
+
 };
 
-function clearGame() {
-	$('.question').html('');
-	$('.answerOne').html('<input class="checkbox" name="answer" type="radio" id="id1" > <label style="vertical-align: middle" for="id1"></label>');
-	$('.answerTwo').html('<input class="checkbox" name="answer" type="radio" id="id2" > <label style="vertical-align: middle" for="id2"></label>');
-	$('.answerThree').html('<input class="checkbox" name="answer" type="radio" id="id3" > <label style="vertical-align: middle" for="id3"></label>');
-	$('.answerFour').html('<input class="checkbox" name="answer" type="radio" id="id4" > <label style="vertical-align: middle" for="id4"></label>');
+
+
+function flipCard() { 
+
+	$("#card").flip({
+	  trigger: 'manual'
+	});
+
+	$('.goGame').click(function(){
+		$("#card").flip(true);
+});
+
+	// $('.backGame').click(function(){
+	// 	$("#card").flip(false);
+	// });
+};
+ 
+function clearGame(){
+	$('.question').empty();
+	$('.answerBox').empty();
 };
 
 function reset() {
@@ -106,11 +146,31 @@ function findN(question){
 };
 
 
+function dropDownPersist(){
+
+    $("#dropdown1 li a").click(function(){
+
+      $(".one:first-child").text($(this).text());
+      $(".one:first-child").val($(this).text());
+      selectCat = this.getAttribute("value");
+
+   });
+
+    $("#dropdown2 li a").click(function(){
+
+      $(".two:first-child").text($(this).text());
+      $(".two:first-child").val($(this).text());
+      selectDiff = this.getAttribute("class");
+
+   });
+};
+
 
 
 $(document).ready(function(){
-
-	initiateQuiz();
+	flipCard();
+	dropDownPersist();
+	setGoListener();
 
 });
 
