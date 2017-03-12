@@ -21,9 +21,6 @@ function setGoListener(){
 function runQuiz(api){
 	$.get( api, function( data ) {
 	 	deck = data.results; 
-	 	console.log(deck);
-	 	console.log(deck[tries].category);
-	 	console.log(deck[tries].difficulty);
 		var n = deck.length - 1 ;
 		loadGame(n);
 		clickListener(deck, n);		
@@ -34,7 +31,9 @@ function clickListener(deck_a, n_a) {
 
 	$('.init').click(function()	{
 		var checkedValue = $('.checkbox:checked').parent().text().replace(/ /g, '');
+		console.log(checkedValue);
 		var currentQuestion = deck_a[n_a].question;
+		console.log(deck_a[n_a].correct_answer);
 		var indexB = findN(currentQuestion);
 		var theIs = document.getElementsByClassName('fa-circle');
 		console.log(theIs);
