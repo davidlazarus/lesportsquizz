@@ -30,13 +30,10 @@ function runQuiz(api){
 function clickListener(deck_a, n_a) {
 
 	$('.init').click(function()	{
-		var checkedValue = $('.checkbox:checked').parent().text().replace(/ /g, '');
-		console.log(checkedValue);
+		var checkedValue = $('.checkbox:checked').parent().text();
 		var currentQuestion = deck_a[n_a].question;
-		console.log(deck_a[n_a].correct_answer);
 		var indexB = findN(currentQuestion);
 		var theIs = document.getElementsByClassName('fa-circle');
-		console.log(theIs);
 		checkValues(checkedValue, deck_a, indexB, theIs);
 		deck.splice(indexB, 1);
 		clearGame();
@@ -49,8 +46,10 @@ function clickListener(deck_a, n_a) {
 
 function checkValues(checkedValue_a, deck_a, indexB_a, theIs_a){
 	numberQ--;
-
-	if (checkedValue_a == deck_a[indexB_a].correct_answer){
+	var correctA = deck_a[indexB_a].correct_answer;
+	var correctB = ' ' + correctA;
+	
+	if (checkedValue_a == correctB){
 		Materialize.toast ('correct! nice one!', 4000, 'toast');
 		theIs_a[0].className = "fa fa-check";
 		points ++;
